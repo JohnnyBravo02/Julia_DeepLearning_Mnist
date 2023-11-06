@@ -41,7 +41,7 @@ outputNodes = classes;
 
 # Network Initialization
 if !newModel
-    NeuralNetwork = JLD2.load("Model.jld2")["model"];
+    model = JLD2.load("Model.jld2")["model"];
 else
     model = Chain(
         Dense(inputNodes, hiddenNodes[1], Flux.relu , init=Flux.glorot_uniform),
